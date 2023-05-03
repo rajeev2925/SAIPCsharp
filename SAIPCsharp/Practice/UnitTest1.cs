@@ -32,10 +32,12 @@ namespace SAIPCsharp.Practice
         {
             Spreadsheet sp = new Spreadsheet();
             sp.LoadFromFile(fPath);
-            int lrow=sp.Workbook.Worksheets.ByName(sname).UsedRangeRowMax;
-            for(int i=0; i<lrow;i++)
+            int lrow = sp.Workbook.Worksheets.ByName(sname).UsedRangeRowMax;
+            for (int i = 0; i < lrow; i++)
             {
-                string sdata = sp.Workbook.Worksheets.ByName(sname).Cell(i,0 ).ToString();
+                string sdata = sp.Workbook.Worksheets.ByName(sname).Cell(i, 0).ToString();
+
+
                 Console.WriteLine("data " + i + ":" + sdata);
 
             }

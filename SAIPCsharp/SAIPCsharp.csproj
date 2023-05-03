@@ -70,6 +70,7 @@
     <Compile Include="Practice\Datadrivenclass.cs" />
     <Compile Include="Practice\DynamicDatadriven.cs" />
     <Compile Include="Practice\UnitTest1.cs" />
+    <Compile Include="Practice\UnitTest2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Practice\Datadriven2withURL.cs" />
   </ItemGroup>
