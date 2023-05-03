@@ -75,6 +75,7 @@
     <Compile Include="Practice\Datadriven2withURL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="file\CSharp.docx" />
     <None Include="file\dataex.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
