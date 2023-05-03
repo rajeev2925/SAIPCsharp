@@ -7,7 +7,7 @@ using System.Threading;
 namespace SAIPCsharp
 {
     [TestClass]
-    public class UnitTest2
+    public class Datadriven2withURL
     {
         public static WebDriver driver;
         [TestInitialize]

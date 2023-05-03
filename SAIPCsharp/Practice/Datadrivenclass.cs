@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace SAIPCsharp
 {
     [TestClass]
-    public class UnitTest1
+    public class Datadrivenclass
     {
 
         [DataTestMethod]
