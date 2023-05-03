@@ -16,10 +16,11 @@ namespace SAIPCsharp
             driver = new ChromeDriver();
            driver.Manage().Window.Maximize();
         }
+
         [TestMethod]
         [TestCategory("validateURL")]
         [DataTestMethod]
-        [DataRow("https://meet.google.com/","Google Meet")]
+        [DataRow("https://meet.google.com/", "Google Meet")]
         [DataRow("https://meet.google.com/","Google  eMeet")]
         [DataRow("https://www.facebook.com/login/","Log in to Facebook")]
         [DataRow("https://opensource.zalando.com/zalenium/","Zalenium - A flexible and scalable Selenium Grid.")]
@@ -30,16 +31,28 @@ namespace SAIPCsharp
             Console.WriteLine(acttitle);
             try
             {
-                Assert.Equals(exptitle,acttitle);
+                Assert.Equals(exptitle, acttitle);
                 Console.WriteLine("title matched");
 
             }
             catch (Exception e)
             {
-                Console.WriteLine("title not match");
-                Console.WriteLine(e.StackTrace);
+                try
+                {
+                    Assert.IsTrue(exptitle.Contains(acttitle));
+
+                    Console.WriteLine("title contains actual title");
+
+                }
+                catch
+                {
+                    Console.WriteLine("title not match");
+                    Console.WriteLine(e.StackTrace);
+                }
             }
         }
+
+
         [TestCleanup]
         public void AMsetups()
         {
