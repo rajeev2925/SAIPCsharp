@@ -1,6 +1,8 @@
 ﻿using Bytescout.Spreadsheet;
+using Bytescout.Spreadsheet.COM;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Runtime.ConstrainedExecution;
 using System.Windows.Forms;
 
 namespace SAIPCsharp.Practice
@@ -28,7 +30,15 @@ namespace SAIPCsharp.Practice
         [TestCategory("Read_multiple_data_from_excell")]
         public void TestMethod2()
         {
+            Spreadsheet sp = new Spreadsheet();
+            sp.LoadFromFile(fPath);
+            int lrow=sp.Workbook.Worksheets.ByName(sname).UsedRangeRowMax;
+            for(int i=0; i<lrow;i++)
+            {
+                string sdata = sp.Workbook.Worksheets.ByName(sname).Cell(i,0 ).ToString();
+                Console.WriteLine("data " + i + ":" + sdata);
 
+            }
         }
 
     }
